@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
-import { ArrowLeft, ExternalLink, Mail, CheckCircle2 } from 'lucide-react'
+import { ArrowLeft, ExternalLink, CheckCircle2 } from 'lucide-react'
 import { projects } from '../../assets/js/proyectos'
 
 export default function ProyectoDetallePage() {
@@ -45,23 +45,12 @@ export default function ProyectoDetallePage() {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-auto"
+          className="w-full max-h-64 object-contain"
         />
       </div>
 
       {/* Links */}
       <div className="flex flex-wrap gap-4 mb-8">
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg text-foreground hover:border-primary hover:text-primary transition-colors"
-          >
-            <Mail size={18} />
-            Ver codigo
-          </a>
-        )}
         {project.demo && (
           <a
             href={project.demo}

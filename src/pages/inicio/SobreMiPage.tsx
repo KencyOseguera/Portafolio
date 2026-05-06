@@ -1,15 +1,15 @@
-import { Code2, Users, Folder, Calendar } from 'lucide-react'
+import { Layers, Smartphone, Database, RefreshCw } from 'lucide-react'
 
 const stats = [
-  { icon: Calendar, value: '5+', label: 'Anos de experiencia' },
-  { icon: Folder, value: '30+', label: 'Proyectos completados' },
-  { icon: Users, value: '15+', label: 'Clientes satisfechos' },
-  { icon: Code2, value: '50K+', label: 'Lineas de codigo' },
+{ icon: Layers, label: 'Desarrollo Web', value: 'Apps completas' },
+{ icon: Smartphone, label: 'UI Responsiva', value: 'Interfaces adaptables' },
+{ icon: Database, label: 'Gestión de Datos', value: 'Diseño y consultas BD' },
+{ icon: RefreshCw, label: 'Mantenimiento', value: 'Mejora de sistemas existentes' },
 ]
 
 const technologies = [
-  'React', 'TypeScript', 'Node.js', 'Python', 'PostgreSQL', 'Docker',
-  'AWS', 'Git', 'MongoDB', 'Redis', 'GraphQL', 'Kubernetes'
+  'React', 'TypeScript', 'Node.js', 'Python', 'SQL Server', 'Oracle',
+  'PHP', 'Git', 'MySQL', '.NET', 'JavaScript', 'HTML', 'CSS'
 ]
 
 export default function SobreMiPage() {
@@ -23,20 +23,18 @@ export default function SobreMiPage() {
       <div className="grid lg:grid-cols-2 gap-12 mb-12">
         <div>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            Soy una ingeniera en sistemas apasionada por la tecnologia y el desarrollo 
-            de software. Me especializo en crear soluciones innovadoras que resuelven 
-            problemas reales y mejoran la vida de las personas.
+            Soy ingeniera en sistemas con experiencia en desarrollo de software, principalmente en aplicaciones web. 
+            Me enfoco en crear soluciones funcionales, con código ordenado y fácil de mantener.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            Mi trayectoria profesional me ha llevado a trabajar en diversos proyectos, 
-            desde aplicaciones web hasta sistemas empresariales complejos. Siempre 
-            busco aprender nuevas tecnologias y metodologias para mantenerme actualizada 
-            en este campo en constante evolucion.
+           He participado en distintos proyectos que me han permitido trabajar tanto en frontend como en backend, 
+           así como en el manejo de bases de datos. Mi enfoque se centra en crear herramientas eficaces que 
+           resuelvan necesidades específicas de manera clara.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            Cuando no estoy programando, disfruto de leer sobre nuevas tendencias 
-            tecnologicas, contribuir a proyectos open source y compartir conocimientos 
-            con la comunidad de desarrolladores.
+            Tengo experiencia utilizando lenguajes como JavaScript, Python y .NET, apoyándome en frameworks como React 
+            para el desarrollo de interfaces. Busco oportunidades donde pueda seguir aprendiendo y aportar en el desarrollo 
+            de soluciones.
           </p>
         </div>
 
@@ -47,7 +45,7 @@ export default function SobreMiPage() {
               className="p-6 bg-card border border-border rounded-lg text-center"
             >
               <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-3xl font-bold text-foreground mb-1">{stat.value}</div>
+              <div className="text-xl font-bold text-foreground mb-1">{stat.value}</div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>
             </div>
           ))}

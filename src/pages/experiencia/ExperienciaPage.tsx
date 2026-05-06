@@ -2,40 +2,41 @@ import { useState } from 'react'
 
 const experiences = [
   {
-    company: 'Tech Company',
-    role: 'Senior Software Engineer',
-    period: '2022 - Presente',
-    description: [
-      'Lidere el desarrollo de una plataforma de microservicios que procesa mas de 1M de transacciones diarias',
-      'Implemente pipelines de CI/CD reduciendo el tiempo de despliegue en un 60%',
-      'Mentore a un equipo de 5 desarrolladores junior en mejores practicas de desarrollo',
-      'Disemine la arquitectura de sistemas distribuidos y bases de datos escalables',
-    ],
-    technologies: ['React', 'Node.js', 'AWS', 'PostgreSQL', 'Docker', 'Kubernetes'],
-  },
-  {
-    company: 'Startup Innovation',
+    company: 'Banco Central de Honduras',
     role: 'Full Stack Developer',
-    period: '2020 - 2022',
+    period: 'Oct 2025 - Feb 2026',
     description: [
-      'Desarrolle aplicaciones web responsivas utilizando React y TypeScript',
-      'Construi APIs RESTful con Node.js y Express para multiples clientes',
-      'Optimice consultas de base de datos mejorando el rendimiento en un 40%',
-      'Colabore en equipos agiles utilizando metodologias Scrum',
+      'Colabore en el desarrollo de aplicativo en VB.NET para monitoreo de indicadores clave de desempeño (KPIs), incluyendo implementación de módulos funcionales, validación de datos y manejo de errores.',
+      'Participe en el diseño y gestión de bases de datos en Oracle, abarcando creación de consultas SQL, diseño de tablas y relaciones, así como procedimientos almacenados y jobs para automatización de procesos.',
+      'Participe en el análisis de requerimientos, documentación de procesos y apoyo en pruebas funcionales del sistema.',
     ],
-    technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Redis'],
+    technologies: ['VB.NET', 'Asp', '.NET Framework 4.8', 'Azure', 'TFS', 'Oracle', 'Modelo N-Capas'],
   },
   {
-    company: 'Digital Agency',
-    role: 'Junior Developer',
-    period: '2018 - 2020',
+    company: 'Startup Sistema de pedidos mediante QR',
+    role: 'Frontend Developer',
+    period: '2025',
     description: [
-      'Participe en el desarrollo de sitios web para clientes corporativos',
-      'Aprendi y aplique mejores practicas de desarrollo de software',
-      'Colabore en la integracion de sistemas de terceros mediante APIs',
-      'Realize testing y debugging de aplicaciones existentes',
+      '(Proyecto académico)',
+      'Realice mockups utilizando Figma para definir la interfaz de usuario y experiencia de usuario (UI/UX) del sistema.',
+      'Desarrolle módulos con interfaces responsivas utilizando React y TypeScript',
+      'Aplique metodologia PWA para garantizar una experiencia fluida en dispositivos móviles',
+      'Construi en la gestión de la base de datos utilizando MySQL',
+      'Colabore en equipo utilizando metodologias Scrum',
     ],
-    technologies: ['JavaScript', 'HTML', 'CSS', 'PHP', 'MySQL'],
+    technologies: ['React', 'TypeScript', 'Node.js', 'MySQL', 'Vite', 'Figma'],
+  },
+  {
+    company: 'Sistema de registro',
+    role: 'Frontend Developer',
+    period: '2025',
+    description: [
+      'Diseño e implementación de interfaz de usuario',
+      'Aprendi y aplique mejores practicas de desarrollo de software',
+      'Participe en la gestión de la base de datos y desarrollo de lógica de negocio en un sistema orientado a procesos universitarios, incluyendo gestión de inscripciones, matrícula estudiantil y recursos bibliográficos',
+      'Trabaje en equipo utilizando Jira para la gestión de tareas y colaboración efectiva',
+    ],
+    technologies: ['JavaScript', 'HTML', 'CSS', 'PHP', 'MySQL', 'MVC', 'Jira'],
   },
 ]
 

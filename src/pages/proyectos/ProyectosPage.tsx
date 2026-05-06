@@ -21,7 +21,7 @@ export default function ProyectosPage() {
             className="group block bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-all"
           >
             <div className="flex flex-col md:flex-row">
-              <div className="md:w-72 h-48 md:h-auto overflow-hidden">
+              <div className="md:w-72 h-48 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
