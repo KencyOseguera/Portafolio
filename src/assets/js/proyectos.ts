@@ -3,9 +3,10 @@ export interface Project {
   title: string
   shortDescription: string
   description: string
-  image: string
+  image: string // Imagen principal del proyecto
+  images?: string[] // Galería de imágenes adicionales
   technologies: string[]
-  features: string[]
+  features: string[] // Lista de características o funcionalidades del proyecto
   github: string
   demo?: string
   year: string
@@ -18,6 +19,7 @@ export const projects: Project[] = [
     shortDescription: 'Sistema orientado a la formulaciòn y monitoreo de indicadores clave de desempeño (KPIs).',
     description: 'Sistema orientado a la formulaciòn y monitoreo de indicadores clave de desempeño (KPIs), permitiendo la visualización, seguimiento y control de métricas estratégicas para apoyar la toma de decisiones.',
     image: '/image.png',
+    images: ['/image.png', '/image2.png', '/image-1.png'],
     technologies: ['VB.NET', 'Asp', '.NET Framework 4.8', 'Azure', 'TFS', 'Oracle', 'Modelo N-Capas'],
     features: [
       'Dashboard con metricas en tiempo real',
@@ -43,6 +45,7 @@ export const projects: Project[] = [
     shortDescription: 'Sistema para la gestión de pedidos en establecimientos, con acceso al menú mediante código QR y procesamiento automático de órdenes.',
     description: 'Sistema para la gestión de pedidos en establecimientos, con acceso al menú mediante código QR y procesamiento automático de órdenes, permitiendo a los clientes realizar pedidos desde sus dispositivos móviles y a los establecimientos gestionar las órdenes de manera eficiente.',
     image: '/meniu1.png',
+    images: ['/meniu1.png', '/meniu2.png', '/meniu3.png', '/meniu4.png', '/meniu5.png'],
     technologies: ['React', 'Tailwind', 'TypeScript', 'MySQL', 'PWA', 'Figma', 'GitHub'],
     features: [
       'Catalogo de productos con acceso mediante QR',
@@ -66,6 +69,7 @@ export const projects: Project[] = [
     shortDescription: 'Sistema orientado a la automatización de procesos universitarios.',
     description: 'Sistema orientado a la automatización de procesos universitarios, incluyendo gestión de inscripciones, matrícula estudiantil y recursos bibliográficos.',
     image: '/matricula1.png',
+    images: ['/matricula1.png', '/matricula2.png', '/matricula3.png', '/matricula4.png'],
     technologies: ['PHP', 'JavaScript', 'MySQL', 'Jira', 'GitHub'],
     features: [
       'Gestión de inscripciones y matrícula',
@@ -101,4 +105,22 @@ export const projects: Project[] = [
     github: 'https://github.com/tuusuario/devops-cli',
     year: '2024',
   },
+  {
+    slug: 'redes',
+    title: 'Redes WAN y LAN',
+    shortDescription: 'Simulación de redes WAN y LAN utilizando Cisco Packet Tracer, con configuración de dispositivos y protocolos de red.',
+    description: 'Simulación de redes WAN y LAN utilizando Cisco Packet Tracer, con configuración de dispositivos y protocolos de red.',
+    image: '/redes1.png',
+    images: ['/redes1.png', '/redes2.png'],
+    technologies: ['Cisco Packet Tracer'],
+    features: [
+      'Configuración de dispositivos de red como routers, switches y hosts',
+      'Implementación de protocolos de enrutamiento como OSPF y EIGRP',
+      'Calculo de subredes y asignación de direcciones IP',
+      'Ruteo estático y dinámico',
+    ],
+    github: 'https://github.com/tuusuario/monitoring',
+    demo: 'https://monitoring-demo.com',
+    year: '2023',
+  }
 ]

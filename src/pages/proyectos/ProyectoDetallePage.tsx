@@ -1,13 +1,26 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
-import { ArrowLeft, ExternalLink, CheckCircle2 } from 'lucide-react'
+import { ArrowLeft, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react'
 import { projects } from '../../assets/js/proyectos'
+import { useState } from 'react'
 
 export default function ProyectoDetallePage() {
   const { slug } = useParams()
   const project = projects.find((p) => p.slug === slug)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   if (!project) {
     return <Navigate to="/proyectos" replace />
+  }
+
+  const imagesToDisplay = project.images && project.images.length > 0 ? project.images : [project.image]
+  const currentImage = imagesToDisplay[currentImageIndex]
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prev) => (prev === 0 ? imagesToDisplay.length - 1 : prev - 1))
+  }
+
+  const goToNext = () => {
+    setCurrentImageIndex((prev) => (prev === imagesToDisplay.length - 1 ? 0 : prev + 1))
   }
 
   return (
@@ -40,27 +53,50 @@ export default function ProyectoDetallePage() {
         </div>
       </div>
 
-      {/* Image */}
-      <div className="mb-8 rounded-lg overflow-hidden border border-border">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full max-h-64 object-contain"
-        />
-      </div>
-
-      {/* Links */}
-      <div className="flex flex-wrap gap-4 mb-8">
-        {project.demo && (
-          <a
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-          >
-            <ExternalLink size={18} />
-            Ver demo
-          </a>
+      {/* Image Gallery */}
+      <div className="mb-8 rounded-lg overflow-hidden border border-border bg-secondary">
+        <div className="relative">
+          <img
+            src={currentImage}
+            alt={`${project.title} - ${currentImageIndex + 1}`}
+            className="w-full max-h-96 object-contain"
+          />
+          {imagesToDisplay.length > 1 && (
+            <>
+              <button
+                onClick={goToPrevious}
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded transition-colors"
+                aria-label="Imagen anterior"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={goToNext}
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded transition-colors"
+                aria-label="Imagen siguiente"
+              >
+                <ChevronRight size={24} />
+              </button>
+              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
+                {currentImageIndex + 1} / {imagesToDisplay.length}
+              </div>
+            </>
+          )}
+        </div>
+        {imagesToDisplay.length > 1 && (
+          <div className="flex gap-2 p-3 overflow-x-auto bg-background">
+            {imagesToDisplay.map((img, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`flex-shrink-0 w-20 h-20 rounded border-2 overflow-hidden transition-all ${
+                  index === currentImageIndex ? 'border-primary' : 'border-border hover:border-primary/50'
+                }`}
+              >
+                <img src={img} alt={`Thumbnail ${index + 1}`} className="w-full h-full object-cover" />
+              </button>
+            ))}
+          </div>
         )}
       </div>
 
